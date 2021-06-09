@@ -38,7 +38,7 @@ export class CreateContactsPage implements OnInit {
 
 
   ngOnInit() {
-    debugger;
+
     this.contactForm = this.formBuilder.group({
       fname: [''],
       // [
@@ -60,7 +60,6 @@ export class CreateContactsPage implements OnInit {
   }
 
   formSubmit() {
-    debugger;
     if (!this.contactForm.valid) {
       return false;
     }

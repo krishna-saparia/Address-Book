@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contacts } from './contacts'
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,21 @@ export class ContactsService {
   contactListRef: AngularFireList<any>;
   contactRef: AngularFireObject<any>;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private ngFirestore: AngularFirestore,) { }
 
   //Create Contact
+
 
   createContact(con: Contacts) {
     return this.contactListRef.push({
       fname: con.fname,
       lname: con.lname,
       mobile: con.mobile,
-      email: con.email,
+      email: con.email
     })
   }
+
+
 
   // Get single contact
 
